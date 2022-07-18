@@ -2,6 +2,6 @@ import React from 'react'
 
 export const Rightbar = () => {
   return (
-    <div>Rightbar</div>
+    <div className="Rightbar flex-[3] border-2">Rightbar</div>
   )
 }
