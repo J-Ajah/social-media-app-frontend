@@ -2,14 +2,25 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer components{
-    .App {
-      /* @apply ; */
-    }
+@layer components {
+  .App {
+    /* @apply ; */
+  }
+
+  .topBarIconItem {
+    @apply flex relative cursor-pointer;
+  }
+  .topbarIcons {
+    @apply text-[22px];
+  }
+  .topbarIconBadge {
+    @apply absolute text-[12px] w-[20px] h-[20px] text-[white] bg-[red] 
+      rounded-full text-center bottom-2 left-3 font-bold;
+  }
 }
 
-
-body{
-   margin: 0;
-   padding: 0;
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
 }
