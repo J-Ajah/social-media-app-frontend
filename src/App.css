@@ -26,6 +26,21 @@
   .shareOptionText {
     @apply text-[14px] font-medium;
   }
+  .rightBarFollowingImage{
+    @apply w-[100px] h-[100px]  object-cover rounded-sm;
+  }
+  .rightBarInfoItem{
+    @apply mb-5;
+  }
+  .rightBarInfoKey{
+    @apply  font-medium mr-2 text-[#555];
+  }
+  .rightBarInfoValue{
+    @apply font-normal;
+  }
+  .rightBarFollowing{
+    @apply flex flex-col;
+  }
 }
 
 body {
@@ -34,16 +49,10 @@ body {
   font-family: "Roboto", sans-serif;
 }
 
-.feed {
-  height: calc(100vh - 50px);
-}
-.sidebar {
-  height: calc(100vh - 50px);
-}
+
 
 .Rightbar {
-  height: calc(100vh - 50px);
-  width: 100%;
+ 
 }
 
 .sideContainerDiv{

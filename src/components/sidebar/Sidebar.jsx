@@ -9,11 +9,13 @@ import {
 } from "react-icons/md";
 import { BiBookmarks } from "react-icons/bi";
 import { BsChatDots } from "react-icons/bs";
+import Friend from "../friend/Friend";
+import { Users } from "../../dummyData";
 
 const Sidebar = () => {
   return (
     <div className="sidebar flex-[3.5] relative">
-      <div className=" sideContainerDiv w-[22.5%] fixed ">
+      <div className=" sideContainerDiv w-[22.5%] fixed top-14">
         <div className="sidebar-wrapper p-5">
           <ul className="sidebarList">
             <li className="sidebarListItem">
@@ -54,46 +56,9 @@ const Sidebar = () => {
           </button>
           <hr className="sidebarHr m-[20px 0]" />
           <ul className="sidebarFriendList p-3  m-0 list-none ">
-            <li className="sidebarFriend flex items-center mb-5">
-              <img
-                src="/assets/person2.jpg"
-                alt=""
-                className="sidebarFriendImg w-[32px] h-[32px] rounded-full object-cover mr-4"
-              />
-              <span>Kwabena Amo</span>
-            </li>
-            <li className="sidebarFriend flex items-center mb-5">
-              <img
-                src="/assets/person2.jpg"
-                alt=""
-                className="sidebarFriendImg w-[32px] h-[32px] rounded-full object-cover mr-4"
-              />
-              <span>Justice Amo</span>
-            </li>
-            <li className="sidebarFriend flex items-center mb-5">
-              <img
-                src="/assets/person2.jpg"
-                alt=""
-                className="sidebarFriendImg w-[32px] h-[32px] rounded-full object-cover mr-4"
-              />
-              <span>Emmanuel Amo</span>
-            </li>
-            <li className="sidebarFriend flex items-center mb-5">
-              <img
-                src="/assets/person2.jpg"
-                alt=""
-                className="sidebarFriendImg w-[32px] h-[32px] rounded-full object-cover mr-4"
-              />
-              <span>Michael Amo</span>
-            </li>
-            <li className="sidebarFriend flex items-center mb-5">
-              <img
-                src="/assets/person2.jpg"
-                alt=""
-                className="sidebarFriendImg w-[32px] h-[32px] rounded-full object-cover mr-4"
-              />
-              <span>Kwabena Amo</span>
-            </li>
+            {Users?.map((user) => (
+              <Friend key={user.id} user={user} />
+            ))}
           </ul>
         </div>
       </div>

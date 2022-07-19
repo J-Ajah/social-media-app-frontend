@@ -5,10 +5,9 @@ import { PostData } from '../../dummyData'
 
 const Feed = () => {
   return (
-    <div className='feed flex-[7] pt-14 '>
-        <div className="feedwrapper px-2">
-            <Share/>
-            {
+    <div className='feed flex-[7] '>
+        <div className="feedwrapper relative px-2 lg:top-14">
+            <Share/>            {
               PostData?.map(post =>  <Post key={post.id} post={post}/>)
             }
            

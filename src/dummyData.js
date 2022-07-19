@@ -80,7 +80,7 @@ export const Users = [
   {
     id: 3,
     userId: 3,
-    username: "Kwabena Dwamana",
+    username: "Kwabena Dwamena",
     profilePicture: "assets/person3.jpg",
   },
   {
