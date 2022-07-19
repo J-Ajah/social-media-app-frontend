@@ -4,7 +4,6 @@ import { Users } from "../../dummyData";
 import FriendsOnline from "../friendsOnline/FriendsOnline";
 
 export const Rightbar = ({ profile }) => {
-  
   const HomeRightBar = () => {
     return (
       <>
@@ -42,56 +41,84 @@ export const Rightbar = ({ profile }) => {
   const ProfileRightBar = () => {
     return (
       <>
-      <div className="px-4">
-         <h4 className="rightBarTitle text-[18px] font-medium mb-2">User Information</h4>
-         <div className="rightBarInfo mb-10">
-          <div className="rightBarInfoItem">
-            <span className="rightBarInfoKey">City:</span>
-            <span className="rightBarInfoValue">New York</span>
+        <div className="px-4">
+          <h4 className="rightBarTitle text-[18px] font-medium mb-2">
+            User Information
+          </h4>
+          <div className="rightBarInfo mb-10">
+            <div className="rightBarInfoItem">
+              <span className="rightBarInfoKey">City:</span>
+              <span className="rightBarInfoValue">New York</span>
+            </div>
+            <div className="rightBarInfoItem">
+              <span className="rightBarInfoKey">From:</span>
+              <span className="rightBarInfoValue">Madrid</span>
+            </div>
+            <div className="rightBarInfoItem">
+              <span className="rightBarInfoKey">Relationship:</span>
+              <span className="rightBarInfoValue">Single</span>
+            </div>
           </div>
-          <div className="rightBarInfoItem">
-            <span className="rightBarInfoKey">From:</span>
-            <span className="rightBarInfoValue">Madrid</span>
+          <h4 className="rightBarTitle text-[18px] font-medium mb-5">
+            User Friends
+          </h4>
+          <div className="rightBarFollowings grid grid-cols-3 w-[90%] mx-auto border-2 justify-items-center">
+            <div className="rightBarFollowing">
+              <img
+                src="assets/person3.jpg"
+                alt=""
+                className="rightBarFollowingImage"
+              />
+              <span className="rightBarFollowingName"> John Smith</span>
+            </div>
+            <div className="rightBarFollowing">
+              <img
+                src="assets/person5.jpg"
+                alt=""
+                className="rightBarFollowingImage"
+              />
+              <span className="rightBarFollowingName"> John Smith</span>
+            </div>
+            <div className="rightBarFollowing">
+              <img
+                src="assets/person3.jpg"
+                alt=""
+                className="rightBarFollowingImage"
+              />
+              <span className="rightBarFollowingName"> John Smith</span>
+            </div>
+            <div className="rightBarFollowing">
+              <img
+                src="assets/person3.jpg"
+                alt=""
+                className="rightBarFollowingImage"
+              />
+              <span className="rightBarFollowingName"> John Smith</span>
+            </div>
+            <div className="rightBarFollowing">
+              <img
+                src="assets/person4.jpg"
+                alt=""
+                className="rightBarFollowingImage"
+              />
+              <span className="rightBarFollowingName"> John Smith</span>
+            </div>
+            <div className="rightBarFollowing">
+              <img
+                src="assets/person3.jpg"
+                alt=""
+                className="rightBarFollowingImage"
+              />
+              <span className="rightBarFollowingName"> John Smith</span>
+            </div>
           </div>
-          <div className="rightBarInfoItem">
-            <span className="rightBarInfoKey">Relationship:</span>
-            <span className="rightBarInfoValue">Single</span>
-          </div>
-         </div>
-         <h4 className="rightBarTitle text-[18px] font-medium mb-5">User Friends</h4>
-         <div className="rightBarFollowings grid grid-cols-3 w-[90%] mx-auto border-2 justify-items-center">
-            <div className="rightBarFollowing">
-                <img src="assets/person3.jpg" alt="" className="rightBarFollowingImage" />
-                <span className="rightBarFollowingName"> John Smith</span>
-            </div>
-            <div className="rightBarFollowing">
-                <img src="assets/person5.jpg" alt="" className="rightBarFollowingImage" />
-                <span className="rightBarFollowingName"> John Smith</span>
-            </div>
-            <div className="rightBarFollowing">
-                <img src="assets/person3.jpg" alt="" className="rightBarFollowingImage" />
-                <span className="rightBarFollowingName"> John Smith</span>
-            </div>
-            <div className="rightBarFollowing">
-                <img src="assets/person3.jpg" alt="" className="rightBarFollowingImage" />
-                <span className="rightBarFollowingName"> John Smith</span>
-            </div>
-            <div className="rightBarFollowing">
-                <img src="assets/person4.jpg" alt="" className="rightBarFollowingImage" />
-                <span className="rightBarFollowingName"> John Smith</span>
-            </div>
-            <div className="rightBarFollowing">
-                <img src="assets/person3.jpg" alt="" className="rightBarFollowingImage" />
-                <span className="rightBarFollowingName"> John Smith</span>
-            </div>
-         </div>
-         </div>
+        </div>
       </>
     );
   };
   return (
     <div className="Rightbar  flex-[5] shadow-md self-start relative top-16">
-      <ProfileRightBar />
+      {profile ? <ProfileRightBar /> : <HomeRightBar />}
     </div>
   );
 };
