@@ -5,7 +5,7 @@ import { IoIosNotifications } from "react-icons/io";
 
 const Topbar = () => {
   return (
-    <div className="topContainer h-[50px] w-full bg-[#14A198] flex items-center  sticky top-0 ">
+    <div className="topContainer h-[50px] w-full z-50 bg-[#14A198] flex items-center  fixed top-0 ">
       <div className="topBarLeft flex-[5]">
         <span className="logo text-[24px] text-[#f8ecec] ml-20 font-bold cursor-pointer">
           Icesocial

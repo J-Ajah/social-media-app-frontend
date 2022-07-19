@@ -6,9 +6,9 @@ import Topbar from "../../components/topbar/Topbar";
 
 const Home = () => {
   return (
-    <div>
+    <div className="">
       <Topbar />
-      <div className="pageContentContainer flex items-center justify-around w-full">
+      <div className="pageContentContainer flex  items-center justify-around relative">
         <Sidebar />
         <Feed />
         <Rightbar />
