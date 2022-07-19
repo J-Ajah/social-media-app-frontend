@@ -11,7 +11,7 @@
     @apply flex relative cursor-pointer;
   }
   .topbarIcons {
-    @apply text-[22px];
+    @apply text-[22px] text-[white];
   }
   .topbarIconBadge {
     @apply absolute text-[12px] w-[20px] h-[20px] text-[white] bg-[red] 
@@ -19,6 +19,12 @@
   }
   .sidebarIcon {
     @apply mr-5 mt-1;
+  }
+  .shareIcon{
+    @apply text-[18px] mr-2;
+  }
+  .shareOptionText{
+    @apply text-[14px] font-medium;
   }
 }
 
