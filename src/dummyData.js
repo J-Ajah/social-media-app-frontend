@@ -2,7 +2,7 @@ export const PostData = [
   {
     id: 1,
     desc: "This is my first post :)",
-    photo: "assets/person1.jpg",
+    photo: "person1.jpg",
     date: "1 hour ago",
     userId: 3,
     like: 61,
@@ -11,7 +11,7 @@ export const PostData = [
   {
     id: 2,
     desc: "Had alot of fun this summer",
-    photo: "assets/person2.jpg",
+    photo: "person2.jpg",
     date: "5 days ago",
     userId: 5,
     like: 100,
@@ -20,7 +20,7 @@ export const PostData = [
   {
     id: 3,
     desc: "Don't let yourself dry. Keep yourself moisturized with our product",
-    photo: "assets/advertisement.jpg",
+    photo: "advertisement.jpg",
     date: "5 hour ago",
     userId: 2,
     like: 61,
@@ -29,7 +29,7 @@ export const PostData = [
   {
     id: 4,
     desc: "My look yesterday. Tell me what you think about it.",
-    photo: "assets/person3.jpg",
+    photo: "person3.jpg",
     date: "1 hour ago",
     userId: 3,
     like: 61,
@@ -38,7 +38,7 @@ export const PostData = [
   {
     id: 5,
     desc: "Had alot of fun with my friends at the all night party. Looking forward to the next one.",
-    photo: "assets/person4.jpg",
+    photo: "person4.jpg",
     date: "15 days ago",
     userId: 4,
     like: 61,
@@ -47,7 +47,7 @@ export const PostData = [
   {
     id: 6,
     desc: "I saw and I conquered",
-    photo: "assets/person5.jpg",
+    photo: "person5.jpg",
     date: "5 hours ago",
     userId: 2,
     like: 21,
@@ -56,7 +56,7 @@ export const PostData = [
   {
     id: 7,
     desc: "Original shoes. Durable for the current weather condition.",
-    photo: "assets/person3.jpg",
+    photo: "person3.jpg",
     date: "10 hours ago",
     userId: 1,
     like: 61,
@@ -69,30 +69,30 @@ export const Users = [
     id: 1,
     userId: 1,
     username: "Phinehas Sersah",
-    profilePicture: "assets/person1.jpg",
+    profilePicture: "person1.jpg",
   },
   {
     id: 2,
     userId: 2,
     username: "Justice Ajah",
-    profilePicture: "assets/person2.jpg",
+    profilePicture: "person2.jpg",
   },
   {
     id: 3,
     userId: 3,
     username: "Kwabena Dwamena",
-    profilePicture: "assets/person3.jpg",
+    profilePicture: "person3.jpg",
   },
   {
     id: 4,
     userId: 4,
     username: "Victor Aremu",
-    profilePicture: "assets/person4.jpg",
+    profilePicture: "person4.jpg",
   },
   {
     id: 5,
     userId: 5,
     username: "Michael Acheampong",
-    profilePicture: "assets/person5.jpg",
+    profilePicture: "person5.jpg",
   },
 ];

@@ -62,7 +62,7 @@ export const Rightbar = ({ profile }) => {
           <h4 className="rightBarTitle text-[18px] font-medium mb-5">
             User Friends
           </h4>
-          <div className="rightBarFollowings grid grid-cols-3 w-[90%] mx-auto border-2 justify-items-center">
+          <div className="rightBarFollowings grid grid-cols-3 w-[90%] mx-auto justify-items-center">
             <div className="rightBarFollowing">
               <img
                 src="assets/person3.jpg"

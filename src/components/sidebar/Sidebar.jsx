@@ -13,6 +13,7 @@ import Friend from "../friend/Friend";
 import { Users } from "../../dummyData";
 
 const Sidebar = () => {
+  const publicFolder = process.env.REACT_APP_PUBLIC_FOLDER;
   return (
     <div className="sidebar flex-[3.5] relative">
       <div className=" sideContainerDiv w-[22.5%] fixed top-14">

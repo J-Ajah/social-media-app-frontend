@@ -6,6 +6,7 @@ import { Users } from "../../dummyData";
 const Post = ({ post }) => {
   const [like, setLike] = useState(post?.like);
   const [postIsLiked, setPostIsLiked] = useState(false);
+  const publicFolder = process.env.REACT_APP_PUBLIC_FOLDER;
 
   const user = Users.filter(
     (currentUser) => currentUser.userId === post.userId
@@ -22,7 +23,7 @@ const Post = ({ post }) => {
           <div className="postTopLeft flex items-center">
             <img
               className="profileImage w-[50px] h-[50px] rounded-full object-cover object-top cursor-pointer"
-              src={user[0]?.profilePicture}
+              src={publicFolder+user[0]?.profilePicture}
               alt="personImage"
             />
             <span className="postUsername text-[17px] font-medium ml-4 mr-5">
@@ -38,7 +39,7 @@ const Post = ({ post }) => {
           <span className="postText">{post?.desc}</span>
           <img
             className="postImage w-[100%] mt-5  bg-gray-500 max-h-[500px]  object-contain object-top"
-            src={post?.photo}
+            src={publicFolder+post?.photo}
             alt=""
           />
         </div>
