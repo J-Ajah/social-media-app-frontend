@@ -29,12 +29,12 @@ const Feed = ({ username }) => {
   return (
     <div className="feed flex-[7] ">
       <div className="feedwrapper relative px-2 lg:top-14">
-      <div class="intersect-container border-2  border-[tomato] h-[100vh] overflow-y-auto ">
-        {(!username || username === user?.[0].username) && <Share />}
-        {post?.map((post, index) => (
-          <Post key={post._id} index={index} post={post} />
-        ))}
-      </div>
+        <div class="intersect-container h-[100vh] overflow-y-auto ">
+          {(!username || username === user?.[0].username) && <Share />}
+          {post?.map((post, index) => (
+            <Post key={post._id} index={index} post={post} />
+          ))}
+        </div>
       </div>
     </div>
   );

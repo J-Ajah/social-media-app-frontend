@@ -16,9 +16,45 @@ const Share = () => {
   const [file, setFile] = useState(null);
   const desc = useRef();
 
+  const uploadImageAndUpdateURL = (newPost, data, config) => {
+    return new Promise(async (resolve, reject) => {
+      try {
+        const res = await axios.post(
+          "http://localhost:8800/api/upload",
+          data,
+          config
+        );
+        console.log("Await: ", res);
+        // Adds the image information to the post request
+        newPost.img = res.data.url;
+        return resolve(newPost);
+      } catch (err) {
+        console.log(err);
+        return reject("Error uploading image");
+      }
+    });
+  };
+
+  // Function that sends the post to the backend server.
+  const sendPostToBackend = async (post) => {
+    if (post.desc || post?.img) {
+      try {
+        const response = await axios.post(
+          "http://localhost:8800/api/posts",
+          post
+        );
+        if (response.status === 200) {
+          window.location.reload();
+        }
+      } catch (error) {
+        console.log(error);
+      }
+    }
+  };
+
   const submitHandler = async (e) => {
     e.preventDefault();
-    const newPost = {
+    let newPost = {
       userId: currentUser[0]._id,
       desc: desc.current.value,
     };
@@ -37,32 +73,20 @@ const Share = () => {
         },
       };
 
-      try {
-        const res = await axios.post(
-          "http://localhost:8800/api/upload",
-          data,
-          config
-        );
-        // Adds the image information to the post request
-        newPost.img = res.data.fileName;
-      } catch (err) {
-        console.log(err);
-      }
+      // Hits the backend api to upload the file to cloudinary and makes the post
+      uploadImageAndUpdateURL(newPost, data, config)
+        .then(async (data) => {
+          // Sends the post to the backend server
+          sendPostToBackend(data);
+        })
+        .catch((error) => {
+          console.log("Error is:", error);
+        });
+    } else {
+      sendPostToBackend(newPost);
     }
 
-    if (newPost.desc || newPost?.img) {
-      try {
-        const response = await axios.post(
-          "http://localhost:8800/api/posts",
-          newPost
-        );
-        if (response.status === 200) {
-          window.location.reload();
-        }
-      } catch (error) {
-        console.log(error);
-      }
-    }
+    console.log("newPost", newPost);
   };
   return (
     <div className="share w-full  ">

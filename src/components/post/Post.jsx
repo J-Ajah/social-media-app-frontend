@@ -9,7 +9,6 @@ import { Link } from "react-router-dom";
 import { AuthContext } from "../../context/AuthContext";
 
 const config = {
-  
   rootMargin: "0px 0px 0px 0px",
   threshold: 0,
 };
@@ -20,6 +19,8 @@ const Post = ({ post, index }) => {
   const { user: currentUser } = useContext(AuthContext);
   const [loaded, setLoaded] = useState(false);
   const publicFolder = process.env.REACT_APP_PUBLIC_FOLDER;
+
+  console.log("Post is:", post);
 
   React.useEffect(() => {
     setPostIsLiked(post.likes.includes(currentUser?.[0]._id));
@@ -37,12 +38,10 @@ const Post = ({ post, index }) => {
     fetchUser();
   }, []);
 
-
-
   // Added intersection observer to load post images dynamically
   React.useEffect(() => {
     config.root = document.querySelector(".intersect-container");
-   
+
     let observer = new window.IntersectionObserver((entries, self) => {
       // Iterate over each entry
       entries.forEach((entry) => {
@@ -56,7 +55,7 @@ const Post = ({ post, index }) => {
       });
     }, config);
 
-    const imgs = document.querySelectorAll('[data-src]');
+    const imgs = document.querySelectorAll("[data-src]");
     imgs.forEach((img) => {
       observer.observe(img);
     });
@@ -83,7 +82,6 @@ const Post = ({ post, index }) => {
   };
   return (
     <div className="post w-full rounded-md mb-5 shadow-md border-2">
-     
       <div className="postWrapper p-5">
         <div className="postTop flex items-center justify-between">
           <div className="postTopLeft flex items-center">
@@ -117,18 +115,20 @@ const Post = ({ post, index }) => {
           {index === 0 ? (
             <img
               className="postImage w-[100%] mt-5  bg-gray-500 max-h-[500px]  object-contain object-top"
-              src={publicFolder + post?.img}
+              src={post?.img ? post.img : ""}
               alt=""
             />
           ) : (
             <img
-              className={`${loaded  ? 'loaded ': 'loading '}   postImage w-[100%] mt-5  bg-gray-500 max-h-[500px]  object-contain object-top`}
+              className={`${
+                loaded ? "loaded " : "loading "
+              }   postImage w-[100%] mt-5  bg-gray-500 max-h-[500px]  object-contain object-top`}
               src={
                 "https://blog.teamtreehouse.com/wp-content/uploads/2015/05/InternetSlowdown_Day.gif"
               }
               alt=""
               onLoad={() => setLoaded(true)}
-              data-src={publicFolder + post?.img}
+              data-src={post?.img ? post?.img : ""}
             />
           )}
         </div>
