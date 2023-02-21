@@ -2,7 +2,6 @@ import React, { useContext, useState } from "react";
 import { MdMoreVert } from "react-icons/md";
 import { BiHeart, BiLike } from "react-icons/bi";
 import { MdPersonOutline } from "react-icons/md";
-import { Users } from "../../dummyData";
 import axios from "axios";
 import { format } from "timeago.js";
 import { Link } from "react-router-dom";
@@ -36,7 +35,7 @@ const Post = ({ post, index }) => {
     };
 
     fetchUser();
-  }, []);
+  }, [post.userId]);
 
   // Added intersection observer to load post images dynamically
   React.useEffect(() => {

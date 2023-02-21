@@ -1,7 +1,6 @@
 import React, { useContext } from "react";
 import Post from "../post/Post";
 import Share from "../share/Share";
-import { PostData } from "../../dummyData";
 import axios from "axios";
 import { AuthContext } from "../../context/AuthContext";
 
