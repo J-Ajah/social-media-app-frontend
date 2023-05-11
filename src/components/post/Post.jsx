@@ -19,12 +19,9 @@ const Post = ({ post, index }) => {
   const [loaded, setLoaded] = useState(false);
   const publicFolder = process.env.REACT_APP_PUBLIC_FOLDER;
 
-  console.log("Post is:", post);
-
   React.useEffect(() => {
     setPostIsLiked(post.likes.includes(currentUser?.[0]._id));
   }, [currentUser, post.likes]);
-
   React.useEffect(() => {
     const fetchUser = async () => {
       const response = await axios.get(
@@ -72,10 +69,10 @@ const Post = ({ post, index }) => {
 
   const likeHandler = () => {
     try {
-      axios.put("http://localhost:8800/api/posts/" + post._id + "/like", {
+      axios.put(`http://localhost:8800/api/posts/` + post._id + "/like", {
         userId: currentUser[0]._id,
       });
-    } catch (error) {}
+    } catch (error) { }
     setLike(!postIsLiked ? like + 1 : like - 1);
     setPostIsLiked(!postIsLiked);
   };
@@ -119,9 +116,8 @@ const Post = ({ post, index }) => {
             />
           ) : (
             <img
-              className={`${
-                loaded ? "loaded " : "loading "
-              }   postImage w-[100%] mt-5  bg-gray-500 max-h-[500px]  object-contain object-top`}
+              className={`${loaded ? "loaded " : "loading "
+                }   postImage w-[100%] mt-5  bg-gray-500 max-h-[500px]  object-contain object-top`}
               src={
                 "https://blog.teamtreehouse.com/wp-content/uploads/2015/05/InternetSlowdown_Day.gif"
               }
