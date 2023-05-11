@@ -60,7 +60,9 @@ const Sidebar = () => {
               <Friend key={user.id} user={user} />
             ))}
           </ul>
+        <button className="border-[1px]  px-4 py-2 bg-[#d6d6d6] rounded-md font-medium block hover:bg-[gray] transition ease-out delay-100">Log out</button>
         </div>
+
       </div>
     </div>
   );
