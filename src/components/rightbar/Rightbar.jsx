@@ -156,7 +156,7 @@ export const Rightbar = ({ user }) => {
     const getFriends = async () => {
       try {
         const friendsList = await axios.get(
-          "http://localhost:8800/api/users/friends/" + user?._id
+          "http://localhost:8800/api/users/friends/" +currentUser?.[0]?._id
         );
         setFriends(friendsList.data);
       } catch (err) {
