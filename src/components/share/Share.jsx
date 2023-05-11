@@ -92,7 +92,7 @@ const Share = () => {
     <div className="share w-full  ">
       <div className="sharewrapper p-5">
         <div className="shareTop flex items-center">
-          {currentUser[0]?.profilePicture ? (
+          {currentUser?.[0]?.profilePicture ? (
             <img
               src="/assets/person1.jpg"
               alt="person"
@@ -102,7 +102,7 @@ const Share = () => {
             <NoImage />
           )}{" "}
           <input
-            placeholder={`What's in your mind ${currentUser[0]?.username} ?`}
+            placeholder={`What's in your mind ${currentUser?.[0]?.username} ?`}
             className="shareInput ml-10 border-none w-[80%] focus:outline-none"
             ref={desc}
           />
