@@ -2,6 +2,8 @@ import React, { useContext, useRef } from "react";
 import { Link } from "react-router-dom";
 import { loginCall } from "../../apiCalls";
 import { AuthContext } from "../../context/AuthContext";
+import { JSEncrypt } from 'jsencrypt';
+
 
 const Login = () => {
   const email = useRef();
@@ -10,12 +12,16 @@ const Login = () => {
 
   const handleClick = (e) => {
     e.preventDefault();
-    console.log(email.current.value);
-    console.log(password.current.value);
-    loginCall(  
+    // Password encryption
+    const encrypt = new JSEncrypt()
+   console.log(process.env.REACT_APP_PUBLIC_KEY)
+    encrypt.setPublicKey(`${process.env.REACT_APP_PUBLIC_KEY}`);
+      const passwordResult = encrypt.encrypt(password.current.value);
+
+    loginCall(
       {
         email: email.current.value,
-        password: password.current.value,
+        password: passwordResult,
       },
       dispatch
     );
@@ -63,9 +69,9 @@ const Login = () => {
                 Forgot Password?
               </span>
               <Link to={'/register'}>
-              <span className="loginRegisterButton block mx-auto w-[50%] py-2 mt-2 rounded-md border-none text-center bg-[#ebac02] text-[20px] text-[white] font-medium cursor-pointer ">
-                Create a New Account
-              </span>
+                <span className="loginRegisterButton block mx-auto w-[50%] py-2 mt-2 rounded-md border-none text-center bg-[#ebac02] text-[20px] text-[white] font-medium cursor-pointer ">
+                  Create a New Account
+                </span>
               </Link>
             </div>
           </form>
